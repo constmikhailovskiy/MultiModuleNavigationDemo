@@ -1,0 +1,1 @@
+include ':core', ':onboarding', ':forme', ':splash', ':food'
