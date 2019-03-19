@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">uicore</string>
+    <string name="screen_name_splash">Splash</string>
+    <string name="screen_name_onboarding">Onboarding</string>
+    <string name="screen_name_for_me">For Me</string>
+    <string name="screen_name_food">Food</string>
+</resources>

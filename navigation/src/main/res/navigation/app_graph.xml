@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/app_graph"
+        app:startDestination="@id/fragmentSplash">
+
+    <fragment
+        android:id="@+id/fragmentSplash"
+        android:name="com.betterme.splash.SplashFragment">
+        <action
+            android:id="@+id/show_onboarding"
+            app:destination="@id/fragmentOnboarding" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentOnboarding"
+        android:name="com.betterme.onboarding.OnboardingFragment">
+
+        <action
+            android:id="@+id/show_for_me"
+            app:destination="@id/fragmentForMe" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentForMe"
+        android:name="com.betterme.forme.ForMeFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentFood"
+        android:name="com.betterme.food.FoodFragment">
+    </fragment>
+</navigation>
