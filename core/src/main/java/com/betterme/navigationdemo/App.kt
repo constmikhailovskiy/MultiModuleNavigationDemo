@@ -18,7 +18,6 @@ class App : Application(), HasActivityInjector {
         super.onCreate()
 
         DaggerAppComponent.builder()
-            .appModule(AppModule(this))
             .application(this)
             .build()
             .inject(this)

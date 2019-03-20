@@ -1,22 +1,26 @@
 package com.betterme.splash
 
-import androidx.fragment.app.Fragment
 import com.betterme.di.scope.FragmentScope
-import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.android.ContributesAndroidInjector
 
 @Module
 interface SplashModule {
 
     @FragmentScope
-    @ContributesAndroidInjector(modules = [SplashBindModule::class])
+    @ContributesAndroidInjector(modules = [SplashDependenciesModule::class])
     fun contributeSplashFragment(): SplashFragment
+
+    @FragmentScope
+    @ContributesAndroidInjector(modules = [SplashDependenciesModule::class])
+    fun contributeNewSplashFragment(): NewSplashFragment
 }
 
 @Module
-interface SplashBindModule {
+class SplashDependenciesModule {
 
-    @Binds
-    fun bindActivity(fragment: SplashFragment): Fragment
+    @Provides
+    @FragmentScope
+    fun provideSplashNavigator(): SplashNavigator = SplashNavigatorImpl()
 }

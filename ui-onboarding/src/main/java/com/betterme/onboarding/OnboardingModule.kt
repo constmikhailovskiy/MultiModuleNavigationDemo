@@ -15,8 +15,8 @@ interface OnboardingModule {
 }
 
 @Module
-interface OnboardingBindModule {
+abstract class OnboardingBindModule {
 
     @Binds
-    fun bindActivity(fragment: OnboardingFragment): Fragment
+    abstract fun bindOnboardingFragment(onboardingFragment: OnboardingFragment): Fragment
 }

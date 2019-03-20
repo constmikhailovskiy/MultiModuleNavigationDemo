@@ -11,12 +11,10 @@ import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.fragment_splash.*
 import javax.inject.Inject
 
-class SplashFragment : Fragment(), SplashView {
+class NewSplashFragment : Fragment(), SplashView {
 
     @Inject
     lateinit var presenter: SplashPresenter
-    @Inject
-    lateinit var navigator: SplashNavigator
 
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
@@ -30,9 +28,9 @@ class SplashFragment : Fragment(), SplashView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        navigator.bindNavController(findNavController(view))
-
         presenter.bind(this)
+
+        tvText.text = "Another splash fragment"
 
         btnNext.setOnClickListener {
             presenter.goToOnboarding()
@@ -41,7 +39,6 @@ class SplashFragment : Fragment(), SplashView {
 
     override fun onDestroyView() {
         presenter.unbind()
-        navigator.unbindNavController()
 
         super.onDestroyView()
     }

@@ -1,13 +1,9 @@
 package com.betterme.navigationdemo.di
 
-import android.app.Application
-import android.content.Context
 import dagger.Module
-import dagger.Provides
 
 @Module
-class AppModule(private val application: Application) {
+class AppModule {
 
-    @Provides
-    fun provideContext(): Context = application.applicationContext
+
 }
